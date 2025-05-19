@@ -1,0 +1,28 @@
+{
+  "name": "ollabot",
+  "version": "0.0.1",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "start": "node --experimental-modules dist/index.js",
+    "dev": "ts-node src/index.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@matrix-org/matrix-sdk-crypto-nodejs": "^0.3.0-beta.1",
+    "@types/matrix-js-sdk": "^11.0.3",
+    "@types/node": "^22.15.18",
+    "matrix-bot-sdk": "^0.7.1",
+    "matrix-events-sdk": "^2.0.0",
+    "matrix-js-sdk": "^37.5.0",
+    "ollama": "^0.5.15",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.3",
+    "zod": "^3.25.28",
+    "zod-to-json-schema": "^3.24.5"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "bots": [
+    {
+      "model": "gemma3:4b",
+      "homeserverUrl": "https://matrix.org/",
+      "userId": "@botuser:matrix.org",
+      "username": "botuser",
+      "accessToken": "<Token from Element > Profile icon > All Settings > Help & About > Access Token>",
+      "aliases": {
+        "@someuser:matrix.org": "John"
+      },
+      "reactions": true,
+      "respond": "mentioned",
+      "systemPrompts": [
+        "You are a helpful assistant. Generate short, realistic replies that reflect a consistent tone, considering recent messages and conversational context. Prioritize responses that feel natural, maintaining a tone that is engaging but concise."
+      ]
+    }
+  ]
+}

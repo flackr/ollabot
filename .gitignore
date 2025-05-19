@@ -1,0 +1,4 @@
+.bot
+bots.json
+dist
+node_modules
