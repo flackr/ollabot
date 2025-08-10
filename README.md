@@ -50,6 +50,8 @@ Supports configurable personalities, response behavior, and message/reaction rul
 ```bash
 git clone https://github.com/flackr/ollabot.git
 cd matrix-ollama-bot
+cp bots.sample.json bots.json
+# Add your accesstoken to bots.json and modify config.
 npm install
 npm run build
 npm run start
