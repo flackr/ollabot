@@ -79,41 +79,6 @@ const SummaryMessageFormat = z.object({
 });
 type SummaryMessageType = z.infer<typeof SummaryMessageFormat>;
 
-function getTime(args: {}) : string {
-  console.log('invoked time');
-  return new Date().toLocaleTimeString();
-}
-function addTwoNumbers(args: { a: number, b: number }): number {
-  console.log(`invoked add ${args.a} + ${args.b}`);
-  return args.a + args.b;
-}
-const getTimeTool = {
-  type: "function",
-  function: {
-    name: "getTime",
-    description: "Gets the current time",
-    parameters: {
-      type: 'object',
-      properties: {}
-    }
-  }
-}
-const addTwoNumbersTool = {
-  type: 'function',
-  function: {
-    name: 'addTwoNumbers',
-    description: 'Add two numbers together',
-    parameters: {
-      type: 'object',
-      required: ['a', 'b'],
-      properties: {
-        a: { type: 'number', description: 'The first number' },
-        b: { type: 'number', description: 'The second number' }
-      }
-    }
-  }
-};
-
 async function chat<Type>(ollama: Ollama, typing: TypingResponse, request: ChatRequest): Promise<Type | null> {
   if (typing.aborted) {
     return null;
