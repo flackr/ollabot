@@ -56,7 +56,7 @@ type BotConfig = {
   password: string;
   reactions: boolean;
   respond: "sometimes" | "always" | "mentioned";
-  aliases: {[id:string]: string};
+  aliases?: {[id:string]: string};
   messageAliases?: {[id:string]: string};
   systemPrompts: string[];
 };
@@ -175,7 +175,7 @@ async function main(): Promise<void> {
       if (event['content']?.['msgtype'] !== 'm.text' && event['content']?.['msgtype'] !== 'm.emote') return;
       if (event['sender'] === await client.getUserId()) return;
       let alias = event['sender'].match(/^@([^:]+):/)[1];
-      alias = botConfig.aliases[event['sender']] || alias;
+      alias = botConfig.aliases && botConfig.aliases[event['sender']] || alias;
       if (!alias) return;
       const room: RoomData = bot.rooms[roomId] = bot.rooms[roomId] || {
         model: botConfig.model,
